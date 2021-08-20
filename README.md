@@ -1,6 +1,6 @@
 # *Phash* <img src="https://img.shields.io/badge/License-GPLv3-blue"/> <img src="https://img.shields.io/badge/python-up%20to%20date-red"/> <img src="https://img.shields.io/badge/version-0.5-yellow"/>   
 
-## *well, this is a tool for hash the text with md5, sha1, sha224, sha256 ...*
+## *Well, this is a tool for hashing text with md5, sha1, sha224, sha256 ...*
 
 ## *install*
       git clone https://github.com/SAJAD-net/phash.git
