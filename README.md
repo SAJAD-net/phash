@@ -2,6 +2,13 @@
 
 ## *Well, this is a tool for hashing text with md5, sha1, sha224, sha256 ...*
 
+            d8888b. db   db  .d8b.  .d8888. db   db 
+            88  `8D 88   88 d8' `8b 88'  YP 88   88 
+            88oodD' 88ooo88 88ooo88 `8bo.   88ooo88 
+            88~~~   88~~~88 88~~~88   `Y8b. 88~~~88 
+            88      88   88 88   88 db   8D 88   88 
+            88      YP   YP YP   YP `8888Y' YP   YP
+
 ## *install*
       git clone https://github.com/SAJAD-net/phash.git
       cd phash/app
