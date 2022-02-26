@@ -24,7 +24,7 @@ def phash(input_text, htype):
 def main():
     """This is the main function, and checks the user inputs and then calls the phash function"""
 
-    if len(args) > 0:
+    if len(argv) > 1:
         uhtype = argv[1].lstrip("-")
         if input_text:=args[uhtype]:
             phash(input_text, hash_types[argv[1]])
