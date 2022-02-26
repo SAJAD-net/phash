@@ -1,73 +1,35 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
+from sys import argv
+from hashlib import md5, sha1, sha224, sha256, sha384, sha512
+from argparse import ArgumentParser
 
-import hashlib
-import argparse
+hash_types = {"-md5":md5, "-sha1":sha1, "-sha224":sha224,\
+"-sha256":sha256, "-sha384":sha384, "-sha512":sha512}
 
-ap=argparse.ArgumentParser()
-ap.add_argument("-md5", required=False, help="hash with md5")
-ap.add_argument("-sha1", required=False, help="hash with sha1")
-ap.add_argument("-sha224", required=False, help="hash with sha224")
-ap.add_argument("-sha256", required=False, help="hash with sha256")
-ap.add_argument("-sha384", required=False, help="hash with sha384")
-ap.add_argument("-sha512", required=False, help="hash with sha512")
-
+ap=ArgumentParser()
+for key in hash_types:
+    ap.add_argument(key, required=False, help=f"{key} hash algorithm")
 args=vars(ap.parse_args())
 
-def solve(func):
-	def wrapper(ps):
-		print(func(ps))
-	return wrapper	
-@solve
-def md5(ps):
-	mh = hashlib.md5()
-	mh.update(ps.encode("utf-8"))
-	md5 = mh.hexdigest()
-	return md5
-@solve
-def sha1(ps):
-	mh = hashlib.sha1()
-	mh.update(ps.encode("utf-8"))
-	sha1 = mh.hexdigest()
-	return sha1
-@solve
-def sha224(ps):
-	mh = hashlib.sha224()
-	mh.update(ps.encode("utf-8"))
-	sha224 = mh.hexdigest()
-	return sha224
-@solve
-def sha256(ps):
-	mh = hashlib.sha384()
-	mh.update(ps.encode("utf-8"))
-	sha384 = mh.hexdigest()
-	return sha384
-@solve
-def sha384(ps):
-	mh = hashlib.sha384()
-	mh.update(ps.encode("utf-8"))
-	sha384 = mh.hexdigest()
-	return sha384
-	
-@solve
-def sha512(ps):
-	mh = hashlib.sha512()
-	mh.update(ps.encode("utf-8"))
-	sha512 = mh.hexdigest()
-	return sha512
+def phash(input_text, htype):
+    """This function takes the `htype` hash algorithm on the input_text\
+    and prints it as output to stdout"""
 
-def run():
-	if len(args) > 0:
-		if args["md5"]:
-			md5(str(args["md5"]))
-		elif args["sha1"]:
-			sha1(args["sha1"])
-		elif args["sha224"]:
-			sha224(args["sha224"])
-		elif args["sha256"]:
-			sha256(args["sha256"])
-		elif args["sha384"]:
-			sha384(args["sha384"])
-		elif args["sha512"]:
-			sha512(args["sha512"])
-run()
+    hash_maker = htype()
+    hash_maker.update(input_text.encode("utf-8"))
+    output = hash_maker.hexdigest()
+    print(output)
+
+def main():
+    """This is the main function, and checks the user inputs and then calls the phash function"""
+
+    if len(args) > 0:
+        uhtype = argv[1].lstrip("-")
+        if input_text:=args[uhtype]:
+            phash(input_text, hash_types[argv[1]])
+    else:
+        ap.print_help()
+
+if __name__ == "__main__":
+    main()
