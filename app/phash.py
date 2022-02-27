@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from sys import argv
+from os import path
 from hashlib import md5, sha1, sha224, sha256, sha384, sha512
 from argparse import ArgumentParser
 
@@ -12,12 +13,19 @@ for key in hash_types:
     ap.add_argument(key, required=False, help=f"{key} hash algorithm")
 args=vars(ap.parse_args())
 
-def phash(input_text, htype):
-    """This function takes the `htype` hash algorithm on the input_text\
+def phash(user_input, htype):
+    """This function takes the `htype` hash algorithm on the `user_input`\
     and prints it as output to stdout"""
 
+    #to hsahing the file, reads the user_input's data if it was a file, then hashes the data
+    if path.exists(user_input):
+        with open(user_input, "rb") as input_file:
+            data = input_file.read()
+    else:
+        data = user_input
+
     hash_maker = htype()
-    hash_maker.update(input_text.encode("utf-8"))
+    hash_maker.update(data)
     output = hash_maker.hexdigest()
     print(output)
 
@@ -26,8 +34,8 @@ def main():
 
     if len(argv) > 1:
         uhtype = argv[1].lstrip("-")
-        if input_text:=args[uhtype]:
-            phash(input_text, hash_types[argv[1]])
+        if user_input:=args[uhtype]:
+            phash(user_input, hash_types[argv[1]])
     else:
         ap.print_help()
 
