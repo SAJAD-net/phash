@@ -1,4 +1,4 @@
-# *Phash* <img src="https://img.shields.io/badge/License-GPLv3-blue"/> <img src="https://img.shields.io/badge/python-up%20to%20date-red"/> <img src="https://img.shields.io/badge/version-0.5-yellow"/>   
+# *Phash* <img src="https://img.shields.io/badge/License-GPLv3-blue"/> <img src="https://img.shields.io/badge/python-up%20to%20date-red"/> <img src="https://img.shields.io/badge/version-1.0-yellow"/>   
 
 ## *Well, this is a tool for hashing the data with md5, sha1, sha224, sha256 ...*
 
@@ -12,7 +12,7 @@
 ## *usage*
       git clone https://github.com/SAJAD-net/phash.git
       cd phash/app
-      python3 phash.py [ARGs]
+      python3 phash.py [ARGs] [File_path OR text]
       
 ## *arguments*
     -h, --help      show this help message and exit
