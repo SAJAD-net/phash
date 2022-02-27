@@ -9,7 +9,7 @@
             88      88   88 88   88 db   8D 88   88 
             88      YP   YP YP   YP `8888Y' YP   YP
 
-## *install*
+## *usage*
       git clone https://github.com/SAJAD-net/phash.git
       cd phash/app
       python3 phash.py [ARGs]
