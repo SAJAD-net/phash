@@ -1,6 +1,6 @@
 # *Phash* <img src="https://img.shields.io/badge/License-GPLv3-blue"/> <img src="https://img.shields.io/badge/python-up%20to%20date-red"/> <img src="https://img.shields.io/badge/version-0.5-yellow"/>   
 
-## *Well, this is a tool for hashing text with md5, sha1, sha224, sha256 ...*
+## *Well, this is a tool for hashing the data with md5, sha1, sha224, sha256 ...*
 
             d8888b. db   db  .d8b.  .d8888. db   db 
             88  `8D 88   88 d8' `8b 88'  YP 88   88 
